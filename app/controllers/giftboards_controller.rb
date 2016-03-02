@@ -15,7 +15,10 @@ class GiftboardsController < ApplicationController
     end
   end
 
-  def destroy
+  def destroy()
+    Giftboard.find(params[:id]).destroy
+    flash[:success] = "Giftboard deleted"
+    redirect_to root_url
   end
 
   private

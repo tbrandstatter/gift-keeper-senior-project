@@ -1,0 +1,16 @@
+<% provide(:title, 'All gfitboards') %>
+<h1>Giftboards</h1>
+
+<%= link_to "Create Giftboard", giftboard_path, class: "btn btn-lg btn-primary" %>
+
+
+<ul class="giftboards">
+  <% @giftboards.each do |giftboard| %>
+    <li>
+      <%= link_to giftboard.name %>
+     |<%= link_to "delete", deletegiftboard_path(id: giftboard.id), method: :delete,
+                                  data: { confirm: "You sure?" } %>
+    </li>
+  <% end %>
+</ul>
+
