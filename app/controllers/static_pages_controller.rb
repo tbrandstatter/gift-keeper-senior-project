@@ -5,7 +5,7 @@ class StaticPagesController < ApplicationController
      render :action => 'logged_in_home'
     else
      render :action => 'non_logged_in_home'
-    end 
+    end
   end
 
   def help
@@ -16,5 +16,6 @@ class StaticPagesController < ApplicationController
 
   def contact
   end
+
 
 end

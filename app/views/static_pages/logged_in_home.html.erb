@@ -7,9 +7,9 @@
 <ul class="giftboards">
   <% @giftboards.each do |giftboard| %>
     <li>
-      <%= link_to giftboard.name %>
+      <%= link_to giftboard.name, idea_path %>
      |<%= link_to "delete", deletegiftboard_path(id: giftboard.id), method: :delete,
-                                  data: { confirm: "You sure?" } %>
+                                  data: { confirm: "Are you sure you want to delete this giftboard?" } %>
     </li>
   <% end %>
 </ul>
