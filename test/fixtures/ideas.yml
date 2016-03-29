@@ -1,7 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  context: MyText
+  content: MyText
+  giftboard_id: 
 
 two:
-  context: MyText
+  content: MyText
+  giftboard_id: 

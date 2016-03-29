@@ -16,11 +16,14 @@ Rails.application.routes.draw do
   delete 'deletegiftboard'  => 'giftboards#destroy'
   post   'giftboard' => 'giftboards#create'
   get    'newidea' => 'ideas#new'
-  get    'idea' => 'ideas#show'
+  get    'idea' => 'ideas#list'
+  post   'newidea' => 'ideas#create'
 
   resources :users
-  resources :giftboards, :only => [:destroy, :index, :edit, :update]
-  resources :ideas, :only => [:destroy, :index, :edit, :update]
+  resources :giftboards
+  resources :ideas
+
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
