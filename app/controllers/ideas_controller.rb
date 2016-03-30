@@ -3,12 +3,14 @@ class IdeasController < ApplicationController
     @idea = Idea.new
   end
 
-  def list
+  def index
     @ideas = Idea.all
   end
 
   def create
-    @idea = Idea.create(ideas_params)
+    @giftboard = Giftboard.find(session[:giftboard_id])
+    @idea = @giftboard.ideas.create(idea_params)
+    @idea.user_id = current_user.id
       if @idea.save
         flash[:success] = "Idea added!"
         redirect_to idea_path
@@ -17,9 +19,15 @@ class IdeasController < ApplicationController
       end
   end
 
+  def destroy()
+    Idea.find(params[:id]).destroy
+    flash[:success] = "Gift idea deleted"
+    redirect_to idea_path
+  end
+
   private
 
-  def ideas_params
+  def idea_params
     params.require(:idea).permit(:content)
   end
 

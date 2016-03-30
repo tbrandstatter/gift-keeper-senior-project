@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
   has_many :giftboards, dependent: :destroy
-  has_many :ideas, through: :giftboards
   attr_accessor :remember_token
   before_save { self.email = email.downcase }
   validates :name, presence: true, length: { maximum: 50 }

@@ -1,0 +1,20 @@
+<% provide(:title, 'gift ideas') %>
+<h1>Gift Ideas</h1>
+
+<% if params[:id] != nil %>
+<% session[:giftboard_id] = params[:id] %>
+<% end %>
+
+<%= link_to "Add Idea", newidea_path(id: params[:id]) , class: "btn btn-lg btn-primary" %>
+
+<ul class="giftboards">
+    <% @ideas.each do |idea| %>
+    <% if idea.giftboard_id == session[:giftboard_id].to_i %>
+      <li>
+        <%= auto_link(idea.content) %>
+       |<%= link_to "delete", deleteidea_path(id: idea.id), method: :delete,
+                                  data: { confirm: "Are you sure you want to delete this gift idea?" } %>
+      </li>
+    <% end %>
+    <% end %>
+</ul>

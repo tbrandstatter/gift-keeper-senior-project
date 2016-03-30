@@ -16,13 +16,14 @@ Rails.application.routes.draw do
   delete 'deletegiftboard'  => 'giftboards#destroy'
   post   'giftboard' => 'giftboards#create'
   get    'newidea' => 'ideas#new'
-  get    'idea' => 'ideas#list'
+  get    'idea' => 'ideas#index'
   post   'newidea' => 'ideas#create'
+  delete 'deleteidea' => 'ideas#destroy'
 
   resources :users
-  resources :giftboards
-  resources :ideas
-
+  resources :giftboards do
+    resources :ideas
+  end
 
 
 
