@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160330005835) do
+ActiveRecord::Schema.define(version: 20160410202027) do
 
   create_table "giftboards", force: :cascade do |t|
     t.string   "name"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20160330005835) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.string   "user_id"
+    t.string   "image"
   end
 
   add_index "ideas", ["giftboard_id"], name: "index_ideas_on_giftboard_id"

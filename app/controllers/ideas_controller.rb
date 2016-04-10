@@ -28,7 +28,7 @@ class IdeasController < ApplicationController
   private
 
   def idea_params
-    params.require(:idea).permit(:content)
+    params.require(:idea).permit(:content, :image, :remote_image_url)
   end
 
 end

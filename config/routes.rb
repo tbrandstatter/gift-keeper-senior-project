@@ -22,7 +22,9 @@ Rails.application.routes.draw do
 
   resources :users
   resources :giftboards do
-    resources :ideas
+    resources :ideas, :shallow => true do
+      resources :images
+    end
   end
 
 
