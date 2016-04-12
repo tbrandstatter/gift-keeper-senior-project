@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160410202027) do
+ActiveRecord::Schema.define(version: 20160412034445) do
+
+  create_table "already_gifted_ideas", force: :cascade do |t|
+    t.text     "content"
+    t.string   "image"
+    t.integer  "giftboard_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "user_id"
+  end
+
+  add_index "already_gifted_ideas", ["giftboard_id"], name: "index_already_gifted_ideas_on_giftboard_id"
 
   create_table "giftboards", force: :cascade do |t|
     t.string   "name"

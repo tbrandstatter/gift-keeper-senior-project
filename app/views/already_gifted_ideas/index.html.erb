@@ -1,0 +1,13 @@
+
+<ul class="giftboards">
+    <% @alreadygiftedideas.each do |idea| %>
+    <% if idea.giftboard_id == session[:giftboard_id].to_i %>
+      <li>
+        <%= auto_link(idea.content) %>
+        <%= image_tag idea.image_url %>
+       |<%= link_to "delete", deletealreadygiftedidea_path(id: idea.id), method: :delete,
+                                  data: { confirm: "Are you sure you want to delete this gift idea?" } %>
+      </li>
+    <% end %>
+    <% end %>
+</ul>

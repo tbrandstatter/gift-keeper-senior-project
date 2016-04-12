@@ -19,6 +19,10 @@ Rails.application.routes.draw do
   get    'idea' => 'ideas#index'
   post   'newidea' => 'ideas#create'
   delete 'deleteidea' => 'ideas#destroy'
+  get   'newalreadygiftedidea' => 'already_gifted_ideas#new'
+  post   'newalreadygiftedidea' => 'already_gifted_ideas#create'
+  get 'alreadygiftedidea' => 'already_gifted_ideas#index'
+  delete 'deletealreadygiftedidea' => 'already_gifted_ideas#destroy'
 
   resources :users
   resources :giftboards do

@@ -1,0 +1,2 @@
+module AlreadyGiftedIdeasHelper
+end
