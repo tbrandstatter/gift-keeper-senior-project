@@ -1,12 +1,11 @@
+<body class="unique" >
 <% provide(:title, "Home") %>
-<div class="center jumbotron">
+<div class="center jumbotron-custom">
   <h1>Gift Keeper</h1>
   <h2>
      This is the home page for the gift keeper web application.
   </h2>
 
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  <%= link_to "Sign up now!", signup_path, class: "btn btn-lg " %>
 </div>
-
-<%= link_to image_tag("gift.png", alt: "Gift Keeper logo"),
-            'http://rubyonrails.org/' %>
+</body>
