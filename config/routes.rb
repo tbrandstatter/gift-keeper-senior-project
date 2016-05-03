@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   post   'login'     => 'sessions#create'
   delete 'logout'    => 'sessions#destroy'
   get    'giftboard' => 'giftboards#new'
+  get    'countdown' => 'giftboards#countdown'
   delete 'deletegiftboard'  => 'giftboards#destroy'
   post   'giftboard' => 'giftboards#create'
   get    'newidea' => 'ideas#new'
@@ -23,6 +24,7 @@ Rails.application.routes.draw do
   post   'newalreadygiftedidea' => 'already_gifted_ideas#create'
   get 'alreadygiftedidea' => 'already_gifted_ideas#index'
   delete 'deletealreadygiftedidea' => 'already_gifted_ideas#destroy'
+
 
   resources :users
   resources :giftboards do

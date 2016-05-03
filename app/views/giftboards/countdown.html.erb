@@ -1,0 +1,23 @@
+<%- model_class = User -%>
+<div class="page-header">
+  <h1>My friends calendar birthday</h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Next birthday</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @giftboards.each do |giftboard| %>
+      <tr>
+        <td><%= giftboard.name %></td>
+        <td>
+            His/Her next birthday is in <%= giftboard.next_birthday[:months] %> months and <%= giftboard.next_birthday[:days] %> days.
+          <% end %>
+        </td>
+
+      </tr>
+  </tbody>
+</table>

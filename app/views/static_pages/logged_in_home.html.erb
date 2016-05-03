@@ -1,16 +1,19 @@
+<body class="subtle" >
 <% provide(:title, 'All gfitboards') %>
-<h1>Gift Lists</h1>
+<h1 id="giftlist">Gift Lists</h1>
 
-<%= link_to "Create Gift List", giftboard_path, class: "btn btn-lg btn-primary" %>
+<%= link_to "Create Gift List", giftboard_path, class: "btn btn-lg btn-giftlist" %>
 
 
-<ul class="giftboards">
+<div id="wrapper">
+<ul>
   <% @giftboards.each do |giftboard| %>
-    <li>
-      <%= link_to giftboard.name, idea_path(id: giftboard.id) %>
-     |<%= link_to "delete", deletegiftboard_path(id: giftboard.id), method: :delete,
+    <li class="grids-lists col-md-4 form-group" id="background">
+     <%= link_to giftboard.name, idea_path(id: giftboard.id), :id => "giftboard-unique" %>
+     <%= link_to "delete", deletegiftboard_path(id: giftboard.id), :class => "glyphicon glyphicon-remove", method: :delete,
                                   data: { confirm: "Are you sure you want to delete this gift list?" } %>
     </li>
   <% end %>
 </ul>
+</div>
 

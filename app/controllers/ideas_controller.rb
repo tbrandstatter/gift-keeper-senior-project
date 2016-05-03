@@ -19,6 +19,7 @@ class IdeasController < ApplicationController
       end
   end
 
+
   def destroy()
     Idea.find(params[:id]).destroy
     flash[:success] = "Gift idea deleted"

@@ -15,6 +15,10 @@ class GiftboardsController < ApplicationController
     end
   end
 
+  def countdown
+    @giftboards = Giftboard.all
+  end
+
   def destroy()
     Giftboard.find(params[:id]).destroy
     flash[:success] = "Giftboard deleted"
@@ -24,6 +28,6 @@ class GiftboardsController < ApplicationController
   private
 
   def giftboards_params
-    params.require(:giftboard).permit(:name)
+    params.require(:giftboard).permit(:name, :birthday)
   end
 end

@@ -1,13 +1,22 @@
-<h1> Already Gifted </h1>
-<ul class="giftboards">
+<body class="subtle" >
+<h1 id="giftlist"> Already Gifted </h1>
+<table id="giftideas">
+  <tbody idea="giftideastable"
+    <tr>
+      <td> Idea </td>
+      <td> Idea Image </td>
+      <td> Move to Already Gifted page </td>
+      <td> Delete </td>
     <% @alreadygiftedideas.each do |idea| %>
     <% if idea.giftboard_id == session[:giftboard_id].to_i %>
-      <li>
-        <%= auto_link(idea.content) %>
-        <%= image_tag idea.image_url %>
-       |<%= link_to "delete", deletealreadygiftedidea_path(id: idea.id), method: :delete,
-                                  data: { confirm: "Are you sure you want to delete this gift idea?" } %>
-      </li>
+      <tr >
+        <td> <%= auto_link(idea.content) %> </td>
+        <td> <%= image_tag idea.image_url %></td>
+        <td><%= link_to "already gifted", newalreadygiftedidea_path(id: idea.id), method: :post, data: { confirm: "Are you sure you want to move this gift idea?" } %></td>
+       <td><%= link_to "delete", deleteidea_path(id: idea.id), method: :delete,
+                                  data: { confirm: "Are you sure you want to delete this gift idea?" } %></td>
+
+      </tr>
     <% end %>
     <% end %>
-</ul>
+</table>

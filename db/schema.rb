@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160412034445) do
+ActiveRecord::Schema.define(version: 20160421173405) do
 
   create_table "already_gifted_ideas", force: :cascade do |t|
     t.text     "content"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20160412034445) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "user_id"
+    t.date     "birthday"
   end
 
   create_table "ideas", force: :cascade do |t|
