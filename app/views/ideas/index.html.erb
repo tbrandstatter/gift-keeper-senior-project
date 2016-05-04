@@ -13,6 +13,8 @@
 <%= link_to "Already Gifted Ideas", alreadygiftedidea_path(id: params[:id]) , class: "btn btn-lg btn-gifted-ideas" %>
 
 
+  
+  
 <table>
   <tbody idea="giftideastable">
     <tr id="title-row" >
@@ -26,8 +28,8 @@
       <tr>
         <td id="ideas"> <%= auto_link(idea.content) %> </td>
         <td> <%= image_tag idea.image_url %></td>
-        <td ><%= link_to "already gifted", newalreadygiftedidea_path(id: idea.id), class: "btn btn-sml btn-primary",method: :post, data: { confirm: "Are you sure you want to move this gift idea?" } %></td>
-       <td><%= link_to "delete", deleteidea_path(id: idea.id), class: "btn btn-sml btn-warning", method: :delete,
+        <td ><%= link_to "already gifted", newalreadygiftedidea_path(id: idea.id), class: "btn btn-sml btn-already-gifted",method: :post, data: { confirm: "Are you sure you want to move this gift idea?" } %></td>
+       <td><%= link_to "delete", deleteidea_path(id: idea.id), class: "btn btn-sml btn-delete-idea", method: :delete,
                                   data: { confirm: "Are you sure you want to delete this gift idea?" } %></td>
 
       </tr>

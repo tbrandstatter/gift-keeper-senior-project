@@ -24,6 +24,9 @@ Rails.application.routes.draw do
   post   'newalreadygiftedidea' => 'already_gifted_ideas#create'
   get 'alreadygiftedidea' => 'already_gifted_ideas#index'
   delete 'deletealreadygiftedidea' => 'already_gifted_ideas#destroy'
+  get 'shopping'     => 'shoppings#index'
+  get 'newshopping'  => 'shoppings#new'
+  post 'newshopping' => 'shoppings#create'
 
 
   resources :users
