@@ -24,12 +24,13 @@ Rails.application.routes.draw do
   post   'newalreadygiftedidea' => 'already_gifted_ideas#create'
   get 'alreadygiftedidea' => 'already_gifted_ideas#index'
   delete 'deletealreadygiftedidea' => 'already_gifted_ideas#destroy'
-  get 'shopping'     => 'shoppings#index'
-  get 'newshopping'  => 'shoppings#new'
-  post 'newshopping' => 'shoppings#create'
-
+  get  'link'  => 'links#index'
+  get   'newlink' => 'links#new'
+  post  'newlink' => 'links#create'
+  delete 'deletelink'  => 'links#destroy'
 
   resources :users
+  resources :links
   resources :giftboards do
     resources :ideas, :shallow => true do
       resources :images

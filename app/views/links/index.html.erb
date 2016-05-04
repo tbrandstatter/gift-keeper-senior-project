@@ -1,0 +1,14 @@
+<body class="subtle" >
+<% provide(:title, 'All Links') %>
+<h1 id="giftlist">Shopping Links</h1>
+
+<%= link_to "Add link", newlink_path, class: "btn btn-lg btn-giftlist" %>
+
+<ul>
+  <% @links.each do |link| %>
+    <li>
+      <%= auto_link(link.content) %> 
+
+    </li>
+  <% end %>
+</ul>
